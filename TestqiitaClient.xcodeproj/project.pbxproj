@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		1171E8CD24E463A200A78BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8CC24E463A200A78BA5 /* AppDelegate.swift */; };
 		1171E8CF24E463A200A78BA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */; };
-		1171E8D124E463A200A78BA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8D024E463A200A78BA5 /* ViewController.swift */; };
-		1171E8D424E463A200A78BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8D224E463A200A78BA5 /* Main.storyboard */; };
 		1171E8D624E463A700A78BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8D524E463A700A78BA5 /* Assets.xcassets */; };
 		1171E8D924E463A700A78BA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8D724E463A700A78BA5 /* LaunchScreen.storyboard */; };
 		1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8E324E463A700A78BA5 /* TestqiitaClientTests.swift */; };
+		1171E8EF24E466B200A78BA5 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
+		1171E8F024E466B200A78BA5 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
+		1171E8F224E598CD00A78BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8F124E598CD00A78BA5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +31,14 @@
 		1171E8C924E463A200A78BA5 /* TestqiitaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestqiitaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1171E8CC24E463A200A78BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1171E8D024E463A200A78BA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1171E8D324E463A200A78BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1171E8D524E463A700A78BA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1171E8D824E463A700A78BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1171E8DA24E463A700A78BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1171E8DF24E463A700A78BA5 /* TestqiitaClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestqiitaClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1171E8E324E463A700A78BA5 /* TestqiitaClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestqiitaClientTests.swift; sourceTree = "<group>"; };
 		1171E8E524E463A700A78BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		1171E8F124E598CD00A78BA5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +82,11 @@
 			children = (
 				1171E8CC24E463A200A78BA5 /* AppDelegate.swift */,
 				1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */,
-				1171E8D024E463A200A78BA5 /* ViewController.swift */,
-				1171E8D224E463A200A78BA5 /* Main.storyboard */,
 				1171E8D524E463A700A78BA5 /* Assets.xcassets */,
 				1171E8D724E463A700A78BA5 /* LaunchScreen.storyboard */,
 				1171E8DA24E463A700A78BA5 /* Info.plist */,
+				1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */,
+				1171E8F124E598CD00A78BA5 /* Main.storyboard */,
 			);
 			path = TestqiitaClient;
 			sourceTree = "<group>";
@@ -180,9 +181,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1171E8F224E598CD00A78BA5 /* Main.storyboard in Resources */,
 				1171E8D924E463A700A78BA5 /* LaunchScreen.storyboard in Resources */,
 				1171E8D624E463A700A78BA5 /* Assets.xcassets in Resources */,
-				1171E8D424E463A200A78BA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1171E8D124E463A200A78BA5 /* ViewController.swift in Sources */,
+				1171E8EF24E466B200A78BA5 /* ArticleListViewController.swift in Sources */,
 				1171E8CD24E463A200A78BA5 /* AppDelegate.swift in Sources */,
 				1171E8CF24E463A200A78BA5 /* SceneDelegate.swift in Sources */,
 			);
@@ -211,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */,
+				1171E8F024E466B200A78BA5 /* ArticleListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +227,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1171E8D224E463A200A78BA5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1171E8D324E463A200A78BA5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1171E8D724E463A700A78BA5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

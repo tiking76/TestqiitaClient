@@ -10,6 +10,15 @@ import XCTest
 @testable import TestqiitaClient
 
 class TestqiitaClientTests: XCTestCase {
+    
+    func test_previewTitle() {
+        let vc = ArticleListViewController()
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        XCTAssertEqual(vc.titleLabel.text, "test")
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
