@@ -15,6 +15,9 @@
 		1171E8EF24E466B200A78BA5 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
 		1171E8F024E466B200A78BA5 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
 		1171E8F224E598CD00A78BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8F124E598CD00A78BA5 /* Main.storyboard */; };
+		1171E8F424E5AA2500A78BA5 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F324E5AA2500A78BA5 /* Article.swift */; };
+		1171E8F624E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */; };
+		1171E8FA24E5C81500A78BA5 /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		1171E8E524E463A700A78BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		1171E8F124E598CD00A78BA5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1171E8F324E5AA2500A78BA5 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListAPIClientProtocol.swift; sourceTree = "<group>"; };
+		1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 				1171E8DA24E463A700A78BA5 /* Info.plist */,
 				1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */,
 				1171E8F124E598CD00A78BA5 /* Main.storyboard */,
+				1171E8F324E5AA2500A78BA5 /* Article.swift */,
+				1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */,
+				1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */,
 			);
 			path = TestqiitaClient;
 			sourceTree = "<group>";
@@ -201,8 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1171E8F424E5AA2500A78BA5 /* Article.swift in Sources */,
+				1171E8F624E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift in Sources */,
 				1171E8EF24E466B200A78BA5 /* ArticleListViewController.swift in Sources */,
 				1171E8CD24E463A200A78BA5 /* AppDelegate.swift in Sources */,
+				1171E8FA24E5C81500A78BA5 /* ArticleListAPIClient.swift in Sources */,
 				1171E8CF24E463A200A78BA5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

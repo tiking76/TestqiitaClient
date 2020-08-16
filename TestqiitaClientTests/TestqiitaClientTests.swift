@@ -11,13 +11,36 @@ import XCTest
 
 class TestqiitaClientTests: XCTestCase {
     
+    override class func setUp() {
+        let article = Article(title: "test")
+        let client = FakeArticleListAPIClient(fakeResponse: [article])
+        let vc = ArticleListViewController(client: client)
+    }
+    
+    
     func test_previewTitle() {
-        let vc = ArticleListViewController()
+        let article = Article(title: "test")
+        let client = FakeArticleListAPIClient(fakeResponse: [article])
+        let vc = ArticleListViewController(client: client)
+        
         let window = UIWindow()
         window.rootViewController = vc
         window.makeKeyAndVisible()
         
         XCTAssertEqual(vc.titleLabel.text, "test")
+    }
+    
+    func test2_previewTitle() {
+        let article = Article(title: "test2")
+        let client = FakeArticleListAPIClient(fakeResponse: [article])
+        let vc = ArticleListViewController(client: client)
+        
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        XCTAssertEqual(vc.titleLabel.text, "test2")
+        
     }
 
     override func setUpWithError() throws {
@@ -40,4 +63,16 @@ class TestqiitaClientTests: XCTestCase {
         }
     }
 
+}
+
+class FakeArticleListAPIClient: ArticleListAPIClientProtocol {
+    let fakeResponse: [Article]
+    
+    init(fakeResponse: [Article]) {
+        self.fakeResponse = fakeResponse
+    }
+    
+    func featch(completion: @escaping (([Article]?) -> Void)) {
+        completion(fakeResponse)
+    }
 }
