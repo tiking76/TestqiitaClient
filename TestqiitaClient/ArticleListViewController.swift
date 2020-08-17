@@ -13,9 +13,9 @@ class ArticleListViewController: UIViewController {
     let titleLabel = UILabel()
     
 
-    let client : ArticleListAPIClientProtocol!
+    let client : ArticleListAPIClientProtocol
     
-   init(client: ArticleListAPIClientProtocol = ArticleListAPIClient()) {
+    init(client: ArticleListAPIClientProtocol = ArticleListAPIClient()) {
           self.client = client
           
           super.init(nibName: nil, bundle: nil)
@@ -27,8 +27,6 @@ class ArticleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        titleLabel.text = "test"
         
         view.backgroundColor = .white
         

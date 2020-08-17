@@ -9,7 +9,6 @@
 import Foundation
 
 class ArticleListAPIClient : ArticleListAPIClientProtocol {
-    
     func featch(completion: @escaping (([Article]?) -> Void)) {
         
     }

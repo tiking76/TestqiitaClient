@@ -11,13 +11,6 @@ import XCTest
 
 class TestqiitaClientTests: XCTestCase {
     
-    override class func setUp() {
-        let article = Article(title: "test")
-        let client = FakeArticleListAPIClient(fakeResponse: [article])
-        let vc = ArticleListViewController(client: client)
-    }
-    
-    
     func test_previewTitle() {
         let article = Article(title: "test")
         let client = FakeArticleListAPIClient(fakeResponse: [article])
