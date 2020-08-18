@@ -16,9 +16,12 @@
 		1171E8F024E466B200A78BA5 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
 		1171E8F224E598CD00A78BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8F124E598CD00A78BA5 /* Main.storyboard */; };
 		1171E8F424E5AA2500A78BA5 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F324E5AA2500A78BA5 /* Article.swift */; };
-		1171E8F624E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */; };
 		1171E8FA24E5C81500A78BA5 /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */; };
 		119C67A524EB20B400702FEF /* TestqiitaClientTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */; };
+		119C67AC24EB64E400702FEF /* ArticleListAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */; };
+		119C67AD24EB65BB00702FEF /* ArticleListAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */; };
+		119C67AE24EB65EC00702FEF /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */; };
+		119C67AF24EB65F100702FEF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F324E5AA2500A78BA5 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,8 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119C67AC24EB64E400702FEF /* ArticleListAPIClientProtocol.swift in Sources */,
 				1171E8F424E5AA2500A78BA5 /* Article.swift in Sources */,
-				1171E8F624E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift in Sources */,
 				1171E8EF24E466B200A78BA5 /* ArticleListViewController.swift in Sources */,
 				1171E8CD24E463A200A78BA5 /* AppDelegate.swift in Sources */,
 				1171E8FA24E5C81500A78BA5 /* ArticleListAPIClient.swift in Sources */,
@@ -282,8 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119C67AD24EB65BB00702FEF /* ArticleListAPIClientProtocol.swift in Sources */,
 				1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */,
+				119C67AE24EB65EC00702FEF /* ArticleListAPIClient.swift in Sources */,
 				1171E8F024E466B200A78BA5 /* ArticleListViewController.swift in Sources */,
+				119C67AF24EB65F100702FEF /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
