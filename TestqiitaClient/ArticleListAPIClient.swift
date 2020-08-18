@@ -10,6 +10,17 @@ import Foundation
 
 class ArticleListAPIClient : ArticleListAPIClientProtocol {
     func featch(completion: @escaping (([Article]?) -> Void)) {
-        
+        guard let url = URL(string: "https://qiita.com/api/v2/items") else { return }
+        let reauest = URLRequest(url: url)
+        URLSession.shared.dataTask(with: reauest) { (data, response, error) in
+            guard let data = data else { return }
+            
+            let articleList = try? JSONDecoder().decode([Article].self, from: data)
+            print("name")
+            print(articleList!)
+            DispatchQueue.main.async {
+                completion(articleList)
+            }
+        }.resume()
     }
 }
