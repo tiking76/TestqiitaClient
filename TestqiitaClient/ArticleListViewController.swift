@@ -11,7 +11,7 @@ import UIKit
 class ArticleListViewController: UIViewController {
     
     let titleLabel = UILabel()
-    
+    let tableView = UITableView()
 
     let client : ArticleListAPIClientProtocol
     
@@ -30,11 +30,18 @@ class ArticleListViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleLabel)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        view.addSubview(tableView)
+        
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
         
         
         client.featch { [weak self] (articleList) in

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Yoshiki Tachi. All rights reserved.
 //
 
+
+import UIKit
 import XCTest
 @testable import TestqiitaClient
 
@@ -34,6 +36,21 @@ class TestqiitaClientTests: XCTestCase {
         
         XCTAssertEqual(vc.titleLabel.text, "test2")
         
+    }
+    
+    
+    func test_previewAllTitle() {
+        let vc = ArticleListViewController()
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        guard let cell = vc.tableView.dataSource?.tableView(vc.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ArticleListCell
+            else {
+                XCTFail()
+                return
+        }
+        XCTAssertEqual(cell.titleLabel.text, "test")
     }
 
     override func setUpWithError() throws {
