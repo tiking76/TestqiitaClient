@@ -16,8 +16,6 @@ class ArticleListAPIClient : ArticleListAPIClientProtocol {
             guard let data = data else { return }
             
             let articleList = try? JSONDecoder().decode([Article].self, from: data)
-            print("name")
-            print(articleList!)
             DispatchQueue.main.async {
                 completion(articleList)
             }

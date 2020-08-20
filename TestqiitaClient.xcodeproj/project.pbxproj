@@ -22,6 +22,8 @@
 		119C67C724EC329C00702FEF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F324E5AA2500A78BA5 /* Article.swift */; };
 		119C67C824EC329F00702FEF /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */; };
 		119C67C924EC32A100702FEF /* ArticleListAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */; };
+		119C67CB24ECA9D800702FEF /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67CA24ECA9D800702FEF /* ArticleListCell.swift */; };
+		119C67CC24ECAA1100702FEF /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67CA24ECA9D800702FEF /* ArticleListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		119C67A224EB20B400702FEF /* TestqiitaClientTests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestqiitaClientTests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestqiitaClientTests2.swift; sourceTree = "<group>"; };
 		119C67A624EB20B400702FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		119C67CA24ECA9D800702FEF /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				1171E8F324E5AA2500A78BA5 /* Article.swift */,
 				1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */,
 				1171E8F524E5AA8600A78BA5 /* ArticleListAPIClientProtocol.swift */,
+				119C67CA24ECA9D800702FEF /* ArticleListCell.swift */,
 			);
 			path = TestqiitaClient;
 			sourceTree = "<group>";
@@ -272,6 +276,7 @@
 				119C67C924EC32A100702FEF /* ArticleListAPIClientProtocol.swift in Sources */,
 				119C67C724EC329C00702FEF /* Article.swift in Sources */,
 				119C67C624EC329A00702FEF /* ArticleListViewController.swift in Sources */,
+				119C67CB24ECA9D800702FEF /* ArticleListCell.swift in Sources */,
 				119C67C824EC329F00702FEF /* ArticleListAPIClient.swift in Sources */,
 				1171E8CD24E463A200A78BA5 /* AppDelegate.swift in Sources */,
 				119C67C524EC329500702FEF /* SceneDelegate.swift in Sources */,
@@ -285,6 +290,7 @@
 				119C67C224EC03AA00702FEF /* ArticleListAPIClientProtocol.swift in Sources */,
 				1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */,
 				119C67B124EBD3FB00702FEF /* ArticleListAPIClient.swift in Sources */,
+				119C67CC24ECAA1100702FEF /* ArticleListCell.swift in Sources */,
 				119C67C124EC035700702FEF /* ArticleListViewController.swift in Sources */,
 				119C67B224EBD40600702FEF /* Article.swift in Sources */,
 				119C67C424EC087600702FEF /* SceneDelegate.swift in Sources */,

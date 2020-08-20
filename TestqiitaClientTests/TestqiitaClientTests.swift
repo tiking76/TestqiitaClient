@@ -40,7 +40,9 @@ class TestqiitaClientTests: XCTestCase {
     
     
     func test_previewAllTitle() {
-        let vc = ArticleListViewController()
+        let article = Article(title: "test")
+        let client = FakeArticleListAPIClient(fakeResponse: [article])
+        let vc = ArticleListViewController(client: client)
         let window = UIWindow()
         window.rootViewController = vc
         window.makeKeyAndVisible()

@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "ArticleListCell"
+
 class ArticleListViewController: UIViewController {
     
     let titleLabel = UILabel()
@@ -15,10 +17,13 @@ class ArticleListViewController: UIViewController {
 
     let client : ArticleListAPIClientProtocol
     
+    var items : [Article]
+    
     init(client: ArticleListAPIClientProtocol = ArticleListAPIClient()) {
-          self.client = client
+        self.client = client
+        self.items = []
           
-          super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: nil)
       }
     
     required init?(coder: NSCoder) {
@@ -28,11 +33,17 @@ class ArticleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        
         view.backgroundColor = .white
+        
+        tableView.register(ArticleListCell.self.self, forCellReuseIdentifier: reuseIdentifier)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(tableView)
+        
+        
         
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
@@ -45,22 +56,28 @@ class ArticleListViewController: UIViewController {
         
         
         client.featch { [weak self] (articleList) in
-            guard let articleList = articleList, 0 < articleList.count else { return }
+            guard let articleList = articleList  else { return }
             
-            self?.titleLabel.text = articleList[0].title
+            self?.items = articleList
+            self?.tableView.reloadData()
+            
         }
         // Do any additional setup after loading the view.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ArticleListViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
+        
+        let article = items[indexPath.row]
+        cell.titleLabel.text = article.title
+        
+        return cell
+    }
 }
