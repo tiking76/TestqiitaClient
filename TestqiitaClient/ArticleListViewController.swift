@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 private let reuseIdentifier = "ArticleListCell"
 
@@ -34,6 +35,7 @@ class ArticleListViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         view.backgroundColor = .white
         
@@ -79,5 +81,14 @@ extension ArticleListViewController : UITableViewDataSource {
         cell.titleLabel.text = article.title
         
         return cell
+    }
+}
+
+extension ArticleListViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string: items[indexPath.row].url) else { return }
+        
+        let safariViewController  =  SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
     }
 }

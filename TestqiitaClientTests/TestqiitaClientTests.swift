@@ -15,7 +15,7 @@ import SafariServices
 class TestqiitaClientTests: XCTestCase {
     
     func test_previewDetailView() {
-        let article = Article(title: "test", url: "http://test")
+        let article = Article(title: "test", url: "")
         let client = FakeArticleListAPIClient(fakeResponse: [article])
         let vc = ArticleListViewController(client: client)
         
