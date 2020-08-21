@@ -35,7 +35,7 @@ class ArticleListViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
-        tableView.delegate = self
+        //tableView.delegate = self
         
         view.backgroundColor = .white
         
@@ -83,7 +83,7 @@ extension ArticleListViewController : UITableViewDataSource {
         return cell
     }
 }
-
+/*
 extension ArticleListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let url = URL(string: items[indexPath.row].url) else { return }
@@ -92,3 +92,4 @@ extension ArticleListViewController : UITableViewDelegate {
         present(safariViewController, animated: true, completion: nil)
     }
 }
+ */
