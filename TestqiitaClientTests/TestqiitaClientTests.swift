@@ -9,12 +9,13 @@
 
 import UIKit
 import XCTest
+import SafariServices
 @testable import TestqiitaClient
 
 class TestqiitaClientTests: XCTestCase {
     
-    func test_previewTitle() {
-        let article = Article(title: "test")
+    func test_previewDetailView() {
+        let article = Article(title: "test", url: "http://test")
         let client = FakeArticleListAPIClient(fakeResponse: [article])
         let vc = ArticleListViewController(client: client)
         
@@ -22,37 +23,10 @@ class TestqiitaClientTests: XCTestCase {
         window.rootViewController = vc
         window.makeKeyAndVisible()
         
-        XCTAssertEqual(vc.titleLabel.text, "test")
-    }
-    
-    func test2_previewTitle() {
-        let article = Article(title: "test2")
-        let client = FakeArticleListAPIClient(fakeResponse: [article])
-        let vc = ArticleListViewController(client: client)
+        vc.tableView(vc.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
         
-        let window = UIWindow()
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
+        XCTAssertTrue(vc.presentedViewController is SFSafariViewController)
         
-        XCTAssertEqual(vc.titleLabel.text, "test2")
-        
-    }
-    
-    
-    func test_previewAllTitle() {
-        let article = Article(title: "test")
-        let client = FakeArticleListAPIClient(fakeResponse: [article])
-        let vc = ArticleListViewController(client: client)
-        let window = UIWindow()
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-        
-        guard let cell = vc.tableView.dataSource?.tableView(vc.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ArticleListCell
-            else {
-                XCTFail()
-                return
-        }
-        XCTAssertEqual(cell.titleLabel.text, "test")
     }
 
     override func setUpWithError() throws {
