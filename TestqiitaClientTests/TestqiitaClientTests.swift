@@ -15,6 +15,19 @@ import SafariServices
 class TestqiitaClientTests: XCTestCase {
     
     
+    func test_previewTitle() {
+        let article = Article(title: "hoge")
+        let client = FakeArticleListAPIClient(fakeResponse: [article])
+        let vc = ArticleListViewController(client: client)
+        
+        let window = UIWindow()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        
+        XCTAssertEqual(vc.titleLabel.text, "hoge")
+    }
+    
+    
     func test_previewAllTitle() {
         let article = Article(title: "test")
         let client = FakeArticleListAPIClient(fakeResponse: [article])
@@ -29,6 +42,10 @@ class TestqiitaClientTests: XCTestCase {
                 return
         }
         XCTAssertEqual(cell.titleLabel.text, "test")
+    }
+    
+    func test_titleView() {
+        
     }
     
     /*

@@ -60,6 +60,8 @@ class ArticleListViewController: UIViewController {
         client.featch { [weak self] (articleList) in
             guard let articleList = articleList  else { return }
             
+            
+            self?.titleLabel.text = articleList[0].title
             self?.items = articleList
             self?.tableView.reloadData()
             
