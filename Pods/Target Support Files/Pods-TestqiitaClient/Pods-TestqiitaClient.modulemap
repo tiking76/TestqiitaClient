@@ -1,0 +1,6 @@
+framework module Pods_TestqiitaClient {
+  umbrella header "Pods-TestqiitaClient-umbrella.h"
+
+  export *
+  module * { export * }
+}

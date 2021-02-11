@@ -14,8 +14,7 @@ import SafariServices
 
 class TestqiitaClientTests: XCTestCase {
     
-    
-    func test_previewTitle() {
+    func test_preview() {
         let article = Article(title: "hoge")
         let client = FakeArticleListAPIClient(fakeResponse: [article])
         let vc = ArticleListViewController(client: client)
@@ -28,25 +27,6 @@ class TestqiitaClientTests: XCTestCase {
     }
     
     
-    func test_previewAllTitle() {
-        let article = Article(title: "test")
-        let client = FakeArticleListAPIClient(fakeResponse: [article])
-        let vc = ArticleListViewController(client: client)
-        let window = UIWindow()
-        window.rootViewController = vc
-        window.makeKeyAndVisible()
-
-        guard let cell = vc.tableView.dataSource?.tableView(vc.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ArticleListCell
-            else {
-                XCTFail()
-                return
-        }
-        XCTAssertEqual(cell.titleLabel.text, "test")
-    }
-    
-    func test_titleView() {
-        
-    }
     
     /*
     func test_previewDetailView() {
