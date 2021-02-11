@@ -26,7 +26,7 @@ struct ArticleListViewModel {
     func fetch() {
         Dependency.init().model.fetch()
             .asObservable()
-            .subscribe(onNext: {list in
+            .subscribe(onNext: { list in
                 print(list)
                 print("hoge")
                 output.articles.accept(list)
