@@ -8,20 +8,28 @@ target 'TestqiitaClient' do
   pod 'JGProgressHUD'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxBlocking'
   pod 'RxKeyboard'
-  pod 'RxTest'
 
   # Pods for TestqiitaClient
 
   target 'TestqiitaClientTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire'
+    pod 'JGProgressHUD'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxKeyboard'
   end
 
   target 'TestqiitaClientTests2' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Alamofire'
+    pod 'JGProgressHUD'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxKeyboard'
   end
 
 end

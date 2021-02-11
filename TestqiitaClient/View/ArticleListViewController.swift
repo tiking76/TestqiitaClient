@@ -13,16 +13,10 @@ import SafariServices
 
 private let reuseIdentifier = "ArticleListCell"
 
-class ArticleListViewController: UIViewController {
+class ArticleListViewController: UIViewController, UITableViewDelegate {
     
     private let titleLabel = UILabel()
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(ArticleListCell.self, forCellReuseIdentifier: reuseIdentifier)
-        return tableView
-    }()
+    private var tableView = UITableView()
     
     private let viewModel: ArticleListViewModel
     private let disposeBeg = DisposeBag()
@@ -38,10 +32,12 @@ class ArticleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("aaaaa")
+        tableView.delegate = self
+        tableView.register(ArticleListCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.addSubview(tableView)
-        
         NSLayoutConstraint.activate([
                     tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
                     tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -54,6 +50,7 @@ class ArticleListViewController: UIViewController {
 
 extension ArticleListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(viewModel.output.articles.value.count)
         return viewModel.output.articles.value.count
     }
     
@@ -65,11 +62,11 @@ extension ArticleListViewController : UITableViewDataSource {
     }
 }
 
-extension ArticleListViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let url = URL(string: viewModel.output.articles.value[indexPath.row].url) else { return }
-        let safariViewController  =  SFSafariViewController(url: url)
-        present(safariViewController, animated: true, completion: nil)
-    }
-}
+//extension ArticleListViewController : UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let url = URL(string: viewModel.output.articles.value[indexPath.row].url) else { return }
+//        let safariViewController  =  SFSafariViewController(url: url)
+//        present(safariViewController, animated: true, completion: nil)
+//    }
+//}
 

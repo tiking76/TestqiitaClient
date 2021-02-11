@@ -24,10 +24,11 @@ struct ArticleListViewModel {
     let output = Output()
     
     func fetch() {
-        Dependency.init().model.featch()
+        Dependency.init().model.fetch()
             .asObservable()
             .subscribe(onNext: {list in
                 print(list)
+                print("hoge")
                 output.articles.accept(list)
             })
             .disposed(by: disposeBeg)

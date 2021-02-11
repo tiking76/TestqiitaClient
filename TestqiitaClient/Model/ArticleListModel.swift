@@ -11,12 +11,12 @@ import RxSwift
 import Alamofire
 
 protocol ArticleListModelProtocol: AnyObject {
-    func featch() -> Observable<[Article]>
+    func fetch() -> Observable<[Article]>
 }
 
 class ArticleListModel : ArticleListModelProtocol {
     let gateway = APIGateway.shared
-    func featch() -> Observable<[Article]> {
+    func fetch() -> Observable<[Article]> {
         let decoder = JSONDecoder()
         return Observable.create { [weak self] observer -> Disposable in
             let request = self?.gateway.request()
