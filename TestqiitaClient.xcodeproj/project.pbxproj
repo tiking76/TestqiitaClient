@@ -15,15 +15,11 @@
 		1171E8D924E463A700A78BA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8D724E463A700A78BA5 /* LaunchScreen.storyboard */; };
 		1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8E324E463A700A78BA5 /* TestqiitaClientTests.swift */; };
 		119C67A524EB20B400702FEF /* TestqiitaClientTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */; };
-		119C67B124EBD3FB00702FEF /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */; };
-		119C67C124EC035700702FEF /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
-		119C67C424EC087600702FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */; };
 		119C67C524EC329500702FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */; };
 		119C67C624EC329A00702FEF /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
 		119C67C724EC329C00702FEF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F324E5AA2500A78BA5 /* Article.swift */; };
 		119C67C824EC329F00702FEF /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F924E5C81500A78BA5 /* ArticleListAPIClient.swift */; };
 		119C67CB24ECA9D800702FEF /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67CA24ECA9D800702FEF /* ArticleListCell.swift */; };
-		119C67CC24ECAA1100702FEF /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67CA24ECA9D800702FEF /* ArticleListCell.swift */; };
 		2440E331EFF52AB78297D98A /* Pods_TestqiitaClientTests2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2A681DFA633CAEBCE85E4 /* Pods_TestqiitaClientTests2.framework */; };
 		7C996226D7DDBD9455196261 /* Pods_TestqiitaClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B74AE287D951326291A1D2 /* Pods_TestqiitaClient.framework */; };
 /* End PBXBuildFile section */
@@ -114,8 +110,8 @@
 		11548C5025D2B5FF008540BF /* API */ = {
 			isa = PBXGroup;
 			children = (
-				11548C4A25D2AA60008540BF /* APIClient.swift */,
 				1171E8F324E5AA2500A78BA5 /* Article.swift */,
+				11548C4A25D2AA60008540BF /* APIClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -452,10 +448,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */,
-				119C67B124EBD3FB00702FEF /* ArticleListAPIClient.swift in Sources */,
-				119C67CC24ECAA1100702FEF /* ArticleListCell.swift in Sources */,
-				119C67C124EC035700702FEF /* ArticleListViewController.swift in Sources */,
-				119C67C424EC087600702FEF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

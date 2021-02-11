@@ -7,21 +7,29 @@
 //
 
 import RxSwift
-import RxCocoa
+import RxRelay
 
-final class ArticleListViewModel {
-    private let disposeBeg = DisposeBag()
-    private let model: ArticleListModelProtocol
+struct ArticleListViewModel {
     
-    // commpacted value
-    var articles: [Article] { return _articles.value }
+    struct Dependency {
+        let model = ArticleListModel()
+    }
     
-    //value
-    private let _articles = BehaviorRelay<[Article]>(value: [])
+    struct Output {
+        let articles = BehaviorRelay<[Article]>(value: [])
+    }
     
-    let reloadData: Observable<Void>
+    let disposeBeg = DisposeBag()
+    let dependency: Dependency
+    let output = Output()
     
-    init() {
-        reloadData.asObservable()
+    func fetch() {
+        Dependency.init().model.featch()
+            .asObservable()
+            .subscribe(onNext: {list in
+                print(list)
+                output.articles.accept(list)
+            })
+            .disposed(by: disposeBeg)
     }
 }

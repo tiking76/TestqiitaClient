@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Alamofire
 
-protocol ArticleListModelProtocol {
+protocol ArticleListModelProtocol: AnyObject {
     func featch() -> Observable<[Article]>
 }
 
