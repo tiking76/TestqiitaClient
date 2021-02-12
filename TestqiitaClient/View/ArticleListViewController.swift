@@ -58,11 +58,6 @@ class ArticleListViewController: UIViewController {
                 cell.configure(title: item.title)
             }
             .disposed(by: disposeBeg)
-        
-        viewModel.output.articles.asObservable()
-            .map{ _ in () }
-            .bind(to: refreshControl.rx.endRefreshing)
-            .disposed(by: disposeBeg)
     }
 }
 

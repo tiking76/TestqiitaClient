@@ -41,6 +41,16 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
         }
     }
     
+    /*
+     @Memo
+     値の流れ方としては
+     fetch -> BehaviorRelay -> Driver
+     となっている
+     今回は
+     BehaviorRelayとfetchはbindで繋がっていて
+     BehaviorRelayとDriverはBehaviorRelayをasDriverをしているから繋がっている
+    */
+    
     //外部公開用と内部で使う用みたいな感じなのかな？
     private let articlesRelay = BehaviorRelay<[Article]>(value: [])
     let articles: Driver<[Article]>
