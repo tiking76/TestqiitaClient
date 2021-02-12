@@ -41,7 +41,7 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
         }
     }
     
-    //外部公開用と内部で使う用みたいな感じ
+    //外部公開用と内部で使う用みたいな感じなのかな？
     private let articlesRelay = BehaviorRelay<[Article]>(value: [])
     let articles: Driver<[Article]>
     
@@ -52,6 +52,34 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
     init(dependency: Dependency) {
         self.articles = articlesRelay.asDriver()
         self.loadingStatus = loadingStatusRelay.asDriver()
+        
+        viewDidLoadRelay.asObservable()
+            .map{ _ in LoadingStatus.loading }
+            .bind(to: loadingStatusRelay)
+            .disposed(by: disposeBeg)
+        
+        /*
+         @Memo
+         ここでonNext(),onErrorのイベントをObservable<Event<Article>>として変換して、
+         別々のストリームとして扱えるようにしていて、
+         最後のshare()でHotObservablesに変換して一つの入力に対して
+         これ以降のobservableがそれぞれ独立したストリームとしてデータ更新を行えるようにしている
+         */
+        let fetched = viewDidLoadRelay.asObservable().flatMap { dependency.model.fetch().asObservable().materialize()}.share()
+        
+        fetched.flatMap { $0.element.map(Observable.just) ?? .empty() }
+            .do(onNext: { [self] _ in
+                loadingStatusRelay.accept(.loadSuccess)
+            })
+            .bind(to: articlesRelay)
+            .disposed(by: disposeBeg)
+        
+        fetched.flatMap { $0.error.map(Observable.just) ?? .empty() }
+            .do(onNext: { [self] _ in
+                loadingStatusRelay.accept(.loadFaild)
+            })
+            .subscribe()
+            .disposed(by: disposeBeg)
     }
     
     //よくわかってない
@@ -60,7 +88,7 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
         viewDidLoadRelay.accept(())
     }
     
-    //interfaceにアクセスする用
+    //interfaceとしてアクセスする用
     var input: ArticleListViewModeInput { self }
     var output: ArticleListViewModeOutputs { self }
 }

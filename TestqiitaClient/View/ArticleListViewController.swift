@@ -18,11 +18,11 @@ class ArticleListViewController: UIViewController {
     private let titleLabel = UILabel()
     private var tableView = UITableView()
     
-    private let viewModel: ArticleListViewModel
+    private let viewModel: ArticleListViewModeTypes
     private let disposeBeg = DisposeBag()
-    private var articles: [Article] = []
+    private let refreshControl = UIRefreshControl()
     
-    init(viewModel: ArticleListViewModel) {
+    init(viewModel: ArticleListViewModeTypes) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,6 +33,12 @@ class ArticleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        figure()
+        bindToviewModel()
+        viewModel.input.viewDidLoad()
+    }
+    
+    private func figure() {
         tableView.register(ArticleListCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
@@ -43,30 +49,38 @@ class ArticleListViewController: UIViewController {
                     tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
                     tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
                 ])
-        viewModel.fetch()
-        //非同期処理忘れるな
     }
     
-    private func bindViewModel() {
+    private func bindToviewModel() {
         viewModel.output.articles.asObservable()
-            .bind(to: tableView.rx.items)
+            .bind(to: tableView.rx.items(cellIdentifier: reuseIdentifier, cellType: ArticleListCell.self)) {
+                _, item, cell in
+                cell.configure(title: item.title)
+            }
+            .disposed(by: disposeBeg)
+        
+        viewModel.output.articles.asObservable()
+            .map{ _ in () }
+            .bind(to: refreshControl.rx.endRefreshing)
+            .disposed(by: disposeBeg)
     }
 }
 
-extension ArticleListViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(viewModel.output.articles.value.count)
-        return viewModel.output.articles.value.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
-        let article = viewModel.output.articles.value[indexPath.row]
-        print(article)
-        cell.titleLabel.text = article.title
-        return cell
-    }
-}
+
+//extension ArticleListViewController : UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(viewModel.output.articles.value.count)
+//        return viewModel.output.articles.value.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
+//        let article = viewModel.output.articles.value[indexPath.row]
+//        print(article)
+//        cell.titleLabel.text = article.title
+//        return cell
+//    }
+//}
 
 //extension ArticleListViewController : UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
