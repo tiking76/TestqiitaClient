@@ -32,7 +32,6 @@ class ArticleListViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("aaaaa")
         tableView.delegate = self
         tableView.register(ArticleListCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
