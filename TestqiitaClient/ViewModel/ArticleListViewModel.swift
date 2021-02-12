@@ -77,6 +77,7 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
          */
         let fetched = viewDidLoadRelay.asObservable().flatMap { dependency.model.fetch().asObservable().materialize()}.share()
         
+        //ここなんもわからんけど動いた
         fetched.flatMap { $0.element.map(Observable.just) ?? .empty() }
             .do(onNext: { [self] _ in
                 loadingStatusRelay.accept(.loadSuccess)
