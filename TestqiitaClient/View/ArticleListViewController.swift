@@ -13,13 +13,14 @@ import SafariServices
 
 private let reuseIdentifier = "ArticleListCell"
 
-class ArticleListViewController: UIViewController, UITableViewDelegate {
+class ArticleListViewController: UIViewController {
     
     private let titleLabel = UILabel()
     private var tableView = UITableView()
     
     private let viewModel: ArticleListViewModel
     private let disposeBeg = DisposeBag()
+    private var articles: [Article] = []
     
     init(viewModel: ArticleListViewModel) {
         self.viewModel = viewModel
@@ -32,7 +33,6 @@ class ArticleListViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
         tableView.register(ArticleListCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
@@ -44,6 +44,12 @@ class ArticleListViewController: UIViewController, UITableViewDelegate {
                     tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
                 ])
         viewModel.fetch()
+        //非同期処理忘れるな
+    }
+    
+    private func bindViewModel() {
+        viewModel.output.articles.asObservable()
+            .bind(to: tableView.rx.items)
     }
 }
 

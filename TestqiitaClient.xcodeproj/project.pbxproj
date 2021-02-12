@@ -14,6 +14,7 @@
 		1171E8D624E463A700A78BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8D524E463A700A78BA5 /* Assets.xcassets */; };
 		1171E8D924E463A700A78BA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1171E8D724E463A700A78BA5 /* LaunchScreen.storyboard */; };
 		1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8E324E463A700A78BA5 /* TestqiitaClientTests.swift */; };
+		117A4D6025D6C056004AFB94 /* LoadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A4D5F25D6C056004AFB94 /* LoadingStatus.swift */; };
 		119C67A524EB20B400702FEF /* TestqiitaClientTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */; };
 		119C67C524EC329500702FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */; };
 		119C67C624EC329A00702FEF /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
@@ -57,6 +58,7 @@
 		1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		1171E8F324E5AA2500A78BA5 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		1171E8F924E5C81500A78BA5 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
+		117A4D5F25D6C056004AFB94 /* LoadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStatus.swift; sourceTree = "<group>"; };
 		119C67A224EB20B400702FEF /* TestqiitaClientTests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestqiitaClientTests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestqiitaClientTests2.swift; sourceTree = "<group>"; };
 		119C67A624EB20B400702FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		1171E8CB24E463A200A78BA5 /* TestqiitaClient */ = {
 			isa = PBXGroup;
 			children = (
+				117A4D5E25D6C02D004AFB94 /* Utilites */,
 				11548C5E25D2B663008540BF /* ViewModel */,
 				11548C5D25D2B65B008540BF /* View */,
 				11548C5025D2B5FF008540BF /* API */,
@@ -178,6 +181,14 @@
 				1171E8E524E463A700A78BA5 /* Info.plist */,
 			);
 			path = TestqiitaClientTests;
+			sourceTree = "<group>";
+		};
+		117A4D5E25D6C02D004AFB94 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				117A4D5F25D6C056004AFB94 /* LoadingStatus.swift */,
+			);
+			path = Utilites;
 			sourceTree = "<group>";
 		};
 		119C67A324EB20B400702FEF /* TestqiitaClientTests2 */ = {
@@ -468,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117A4D6025D6C056004AFB94 /* LoadingStatus.swift in Sources */,
 				119C67C724EC329C00702FEF /* Article.swift in Sources */,
 				119C67C624EC329A00702FEF /* ArticleListViewController.swift in Sources */,
 				11548C4B25D2AA60008540BF /* APIClient.swift in Sources */,

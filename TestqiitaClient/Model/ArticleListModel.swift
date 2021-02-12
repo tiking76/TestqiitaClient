@@ -16,7 +16,7 @@ protocol ArticleListModelProtocol {
 }
 
 struct  ArticleListModel: ArticleListModelProtocol{
-    var apiClient: APIClient
+    var apiClient = APIClient()
     
     func fetch() -> Single<[Article]> {
         return apiClient.request()
