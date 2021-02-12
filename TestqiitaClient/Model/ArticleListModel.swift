@@ -8,32 +8,17 @@
 
 import Foundation
 import RxSwift
-import Alamofire
 
-protocol ArticleListModelProtocol: AnyObject {
-    func fetch() -> Observable<[Article]>
+protocol ArticleListModelProtocol {
+    var apiClient: APIClient { get }
+    
+    func fetch() -> Single<[Article]>
 }
 
-class ArticleListModel : ArticleListModelProtocol {
-    let gateway = APIGateway.shared
-    func fetch() -> Observable<[Article]> {
-        let decoder = JSONDecoder()
-        return Observable.create { [weak self] observer -> Disposable in
-            let request = self?.gateway.request()
-            
-            request?.responseJSON{ response in
-                do {
-                    let articleList = try decoder.decode([Article].self, from: response.data!)
-                    observer.onNext(articleList)
-                    observer.onCompleted()
-                }
-                catch let e {
-                    observer.onError(e)
-                }
-            }
-            return Disposables.create() {
-                request?.cancel()
-            }
-        }
+struct  ArticleListModel: ArticleListModelProtocol{
+    var apiClient: APIClient
+    
+    func fetch() -> Single<[Article]> {
+        return apiClient.request()
     }
 }

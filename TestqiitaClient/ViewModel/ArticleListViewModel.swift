@@ -12,7 +12,7 @@ import RxRelay
 struct ArticleListViewModel {
     
     struct Dependency {
-        let model = ArticleListModel()
+        let model: ArticleListModel
     }
     
     struct Output {
@@ -24,11 +24,9 @@ struct ArticleListViewModel {
     let output = Output()
     
     func fetch() {
-        Dependency.init().model.fetch()
+        dependency.model.fetch()
             .asObservable()
             .subscribe(onNext: { list in
-                print(list)
-                print("hoge")
                 output.articles.accept(list)
             })
             .disposed(by: disposeBeg)
