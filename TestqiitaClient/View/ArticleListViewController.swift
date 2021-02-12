@@ -56,6 +56,7 @@ extension ArticleListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
         let article = viewModel.output.articles.value[indexPath.row]
+        print(article)
         cell.titleLabel.text = article.title
         return cell
     }

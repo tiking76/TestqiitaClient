@@ -19,6 +19,10 @@ struct ArticleListViewModel {
         let articles = BehaviorRelay<[Article]>(value: [])
     }
     
+    /*@Todo
+    - reloadDataの実装
+    - viewModelとViewのつなぎこみ
+    */
     let disposeBeg = DisposeBag()
     let dependency: Dependency
     let output = Output()
