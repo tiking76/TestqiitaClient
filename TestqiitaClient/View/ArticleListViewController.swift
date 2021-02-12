@@ -66,27 +66,3 @@ class ArticleListViewController: UIViewController {
     }
 }
 
-
-//extension ArticleListViewController : UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(viewModel.output.articles.value.count)
-//        return viewModel.output.articles.value.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
-//        let article = viewModel.output.articles.value[indexPath.row]
-//        print(article)
-//        cell.titleLabel.text = article.title
-//        return cell
-//    }
-//}
-
-//extension ArticleListViewController : UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let url = URL(string: viewModel.output.articles.value[indexPath.row].url) else { return }
-//        let safariViewController  =  SFSafariViewController(url: url)
-//        present(safariViewController, animated: true, completion: nil)
-//    }
-//}
-
