@@ -17,20 +17,20 @@ import RxCocoa
 
 protocol ArticleListViewModeTypes {
     var input: ArticleListViewModeInput { get }
-    var output: ArticleListViewModeOutputs { get }
+    var output: ArticleListViewModeOutput { get }
 }
 
 protocol ArticleListViewModeInput {
     func viewDidLoad()
 }
 
-protocol ArticleListViewModeOutputs {
+protocol ArticleListViewModeOutput {
     var articles: Driver<[Article]> { get }
     var loadingStatus: Driver<LoadingStatus> { get }
 }
 
-struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput, ArticleListViewModeOutputs {
-    private let disposeBeg = DisposeBag()
+struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput, ArticleListViewModeOutput {
+    private let disposeBag = DisposeBag()
     
     
     struct Dependency {
@@ -66,7 +66,7 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
         viewDidLoadRelay.asObservable()
             .map{ _ in LoadingStatus.loading }
             .bind(to: loadingStatusRelay)
-            .disposed(by: disposeBeg)
+            .disposed(by: disposeBag)
         
         /*
          @Memo
@@ -74,6 +74,7 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
          別々のストリームとして扱えるようにしていて、
          最後のshare()でHotObservablesに変換して一つの入力に対して
          これ以降のobservableがそれぞれ独立したストリームとしてデータ更新を行えるようにしている
+         割と大事なのはストリームが閉じなくなる点
          */
         let fetched = viewDidLoadRelay.asObservable().flatMap { dependency.model.fetch().asObservable().materialize()}.share()
         
@@ -83,14 +84,14 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
                 loadingStatusRelay.accept(.loadSuccess)
             })
             .bind(to: articlesRelay)
-            .disposed(by: disposeBeg)
+            .disposed(by: disposeBag)
         
         fetched.flatMap { $0.error.map(Observable.just) ?? .empty() }
             .do(onNext: { [self] _ in
-                loadingStatusRelay.accept(.loadFaild)
+                loadingStatusRelay.accept(.loadFailed)
             })
             .subscribe()
-            .disposed(by: disposeBeg)
+            .disposed(by: disposeBag)
     }
     
     //よくわかってない
@@ -101,5 +102,5 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
     
     //interfaceとしてアクセスする用
     var input: ArticleListViewModeInput { self }
-    var output: ArticleListViewModeOutputs { self }
+    var output: ArticleListViewModeOutput { self }
 }
