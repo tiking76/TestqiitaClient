@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class ArticleListCell : UITableViewCell {
     
     static let reuseIdentifier = "ArticleListCell"
