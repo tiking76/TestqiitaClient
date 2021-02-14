@@ -10,5 +10,5 @@ enum LoadingStatus {
     case initial
     case loading
     case loadSuccess
-    case loadFaild
+    case loadFailed
 }
