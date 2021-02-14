@@ -6,10 +6,7 @@
 //  Copyright © 2020 Yoshiki Tachi. All rights reserved.
 //
 
-import Foundation
-
 struct Article : Decodable {
     let title : String
     let url : String
 }
-
