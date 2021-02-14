@@ -14,7 +14,7 @@ class ArticleListCell : UITableViewCell {
     
     static let reuseIdentifier = "ArticleListCell"
     
-    let titleLabel = UILabel()
+    private let titleLabel = UILabel()
     
     override func layoutSubviews() {
         super.layoutSubviews()
