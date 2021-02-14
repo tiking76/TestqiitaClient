@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Article : Codable {
+struct Article : Decodable {
     let title : String
     let url : String
 }

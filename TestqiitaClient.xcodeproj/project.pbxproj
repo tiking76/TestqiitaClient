@@ -16,7 +16,6 @@
 		1171E8E424E463A700A78BA5 /* TestqiitaClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8E324E463A700A78BA5 /* TestqiitaClientTests.swift */; };
 		117A4D6025D6C056004AFB94 /* LoadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A4D5F25D6C056004AFB94 /* LoadingStatus.swift */; };
 		117A4D6925D6EF85004AFB94 /* UIRefreshControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A4D6825D6EF85004AFB94 /* UIRefreshControl+Extension.swift */; };
-		119C67A524EB20B400702FEF /* TestqiitaClientTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */; };
 		119C67C524EC329500702FEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8CE24E463A200A78BA5 /* SceneDelegate.swift */; };
 		119C67C624EC329A00702FEF /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8EE24E466B200A78BA5 /* ArticleListViewController.swift */; };
 		119C67C724EC329C00702FEF /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E8F324E5AA2500A78BA5 /* Article.swift */; };
@@ -62,8 +61,6 @@
 		117A4D5F25D6C056004AFB94 /* LoadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStatus.swift; sourceTree = "<group>"; };
 		117A4D6825D6EF85004AFB94 /* UIRefreshControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Extension.swift"; sourceTree = "<group>"; };
 		119C67A224EB20B400702FEF /* TestqiitaClientTests2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestqiitaClientTests2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestqiitaClientTests2.swift; sourceTree = "<group>"; };
-		119C67A624EB20B400702FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		119C67CA24ECA9D800702FEF /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		3BA629367A46ADBA805389C2 /* Pods-TestqiitaClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestqiitaClient.release.xcconfig"; path = "Target Support Files/Pods-TestqiitaClient/Pods-TestqiitaClient.release.xcconfig"; sourceTree = "<group>"; };
 		669C8D1490495BAF9D38E745 /* Pods-TestqiitaClientTests2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestqiitaClientTests2.release.xcconfig"; path = "Target Support Files/Pods-TestqiitaClientTests2/Pods-TestqiitaClientTests2.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +139,6 @@
 			children = (
 				1171E8CB24E463A200A78BA5 /* TestqiitaClient */,
 				1171E8E224E463A700A78BA5 /* TestqiitaClientTests */,
-				119C67A324EB20B400702FEF /* TestqiitaClientTests2 */,
 				1171E8CA24E463A200A78BA5 /* Products */,
 				E418C0BF2765F0081F3280F2 /* Pods */,
 				789E3C46B0C991E048FCE725 /* Frameworks */,
@@ -200,15 +196,6 @@
 				117A4D6825D6EF85004AFB94 /* UIRefreshControl+Extension.swift */,
 			);
 			path = Extention;
-			sourceTree = "<group>";
-		};
-		119C67A324EB20B400702FEF /* TestqiitaClientTests2 */ = {
-			isa = PBXGroup;
-			children = (
-				119C67A424EB20B400702FEF /* TestqiitaClientTests2.swift */,
-				119C67A624EB20B400702FEF /* Info.plist */,
-			);
-			path = TestqiitaClientTests2;
 			sourceTree = "<group>";
 		};
 		789E3C46B0C991E048FCE725 /* Frameworks */ = {
@@ -515,7 +502,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119C67A524EB20B400702FEF /* TestqiitaClientTests2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
