@@ -93,8 +93,11 @@ struct ArticleListViewModel: ArticleListViewModelTypes, ArticleListViewModelInpu
             .subscribe()
             .disposed(by: disposeBag)
     }
-    
-    //よくわかってない
+    /*
+     @Memo
+    accept で Relay に .nextイベントを送ることができます。
+    Observableの外側からイベントを流すことができるわけです。
+    */
     private let viewDidLoadRelay = PublishRelay<Void>()
     func viewDidLoad() {
         viewDidLoadRelay.accept(())
