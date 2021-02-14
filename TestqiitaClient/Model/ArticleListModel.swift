@@ -6,7 +6,6 @@
 //  Copyright © 2020 Yoshiki Tachi. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 protocol ArticleListModelProtocol {
@@ -15,7 +14,7 @@ protocol ArticleListModelProtocol {
     func fetch() -> Single<[Article]>
 }
 
-struct  ArticleListModel: ArticleListModelProtocol{
+struct ArticleListModel: ArticleListModelProtocol {
     var apiClient = APIClient()
     
     func fetch() -> Single<[Article]> {
