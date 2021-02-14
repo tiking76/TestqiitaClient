@@ -15,21 +15,21 @@ import RxCocoa
 - viewModelとViewのつなぎこみ
 */
 
-protocol ArticleListViewModeTypes {
-    var input: ArticleListViewModeInput { get }
-    var output: ArticleListViewModeOutput { get }
+protocol ArticleListViewModelTypes {
+    var input: ArticleListViewModelInput { get }
+    var output: ArticleListViewModelOutput { get }
 }
 
-protocol ArticleListViewModeInput {
+protocol ArticleListViewModelInput {
     func viewDidLoad()
 }
 
-protocol ArticleListViewModeOutput {
+protocol ArticleListViewModelOutput {
     var articles: Driver<[Article]> { get }
     var loadingStatus: Driver<LoadingStatus> { get }
 }
 
-struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput, ArticleListViewModeOutput {
+struct ArticleListViewModel: ArticleListViewModelTypes, ArticleListViewModelInput, ArticleListViewModelOutput {
     private let disposeBag = DisposeBag()
     
     
@@ -101,6 +101,6 @@ struct ArticleListViewModel: ArticleListViewModeTypes, ArticleListViewModeInput,
     }
     
     //interfaceとしてアクセスする用
-    var input: ArticleListViewModeInput { self }
-    var output: ArticleListViewModeOutput { self }
+    var input: ArticleListViewModelInput { self }
+    var output: ArticleListViewModelOutput { self }
 }
