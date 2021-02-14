@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleListCell : UITableViewCell {
+final class ArticleListCell : UITableViewCell {
     
     static let reuseIdentifier = "ArticleListCell"
     
