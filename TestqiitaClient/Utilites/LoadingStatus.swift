@@ -6,8 +6,6 @@
 //  Copyright © 2021 Yoshiki Tachi. All rights reserved.
 //
 
-import Foundation
-
 enum LoadingStatus {
     case initial
     case loading
