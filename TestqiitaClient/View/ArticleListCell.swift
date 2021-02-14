@@ -8,7 +8,11 @@
 
 import UIKit
 
+
+
 class ArticleListCell : UITableViewCell {
+    
+    static let reuseIdentifier = "ArticleListCell"
     
     let titleLabel = UILabel()
     
@@ -16,9 +20,7 @@ class ArticleListCell : UITableViewCell {
         super.layoutSubviews()
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         contentView.addSubview(titleLabel)
-        
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8.0).isActive = true
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.0).isActive = true
     }

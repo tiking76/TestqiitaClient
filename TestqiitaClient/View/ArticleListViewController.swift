@@ -11,18 +11,16 @@ import RxSwift
 import RxCocoa
 import SafariServices
 
-private let reuseIdentifier = "ArticleListCell"
-
-class ArticleListViewController: UIViewController {
+final class ArticleListViewController: UIViewController {
     
     private let titleLabel = UILabel()
     private var tableView = UITableView()
     
-    private let viewModel: ArticleListViewModeTypes
-    private let disposeBeg = DisposeBag()
+    private let viewModel: ArticleListViewModelTypes
+    private let disposeBag = DisposeBag()
     private let refreshControl = UIRefreshControl()
     
-    init(viewModel: ArticleListViewModeTypes) {
+    init(viewModel: ArticleListViewModelTypes) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,7 +37,7 @@ class ArticleListViewController: UIViewController {
     }
     
     private func figure() {
-        tableView.register(ArticleListCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(ArticleListCell.self, forCellReuseIdentifier: ArticleListCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.addSubview(tableView)
@@ -53,11 +51,11 @@ class ArticleListViewController: UIViewController {
     
     private func bindToviewModel() {
         viewModel.output.articles.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: reuseIdentifier, cellType: ArticleListCell.self)) {
+            .bind(to: tableView.rx.items(cellIdentifier: ArticleListCell.reuseIdentifier, cellType: ArticleListCell.self)) {
                 _, item, cell in
                 cell.configure(title: item.title)
             }
-            .disposed(by: disposeBeg)
+            .disposed(by: disposeBag)
     }
 }
 
